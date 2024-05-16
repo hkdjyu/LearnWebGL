@@ -2,12 +2,13 @@
 
 _a simple guide to learn WebGL2 AND share my progress of learning_
 
-If you are new to WebGL2, you may also follow my steps to learn the fundalmentals concept of computer graphics in web applications using WebGL2. I am calling it a "guide" instead of "tutorial", because I am not a specialised WebGL programmer. I hope my experience may also help you to learn WebGL.  
+If you are new to WebGL2, you may follow my steps to learn the fundalmentals concept of computer graphics in web applications using WebGL2. I am calling it a "guide" instead of "tutorial", because I am not a specialised WebGL programmer. I hope my experience may help you to learn WebGL.  
 
-> NOTE: This guide is not recommended for people with no prior knowledge of JavaScript/TypeScript and computer graphics concepts.
-> Prior knowledge of OpenGL and GLSL is not necessary but recommended.
+> NOTE: This guide is not recommended for people with no prior knowledge of JavaScript.
+> Prior knowledge of OpenGL and GLSL is not necessary. I will try to explain some of the fundalmental concepts of computer graphics when necessary.
 
 This guide is primarily based on [WebGL2 Fundamentals](https://webgl2fundamentals.org/).
+Some of the demo references from [WebGL2Samples](https://github.com/WebGLSamples/WebGL2Samples)
 
 ## Contents
 
@@ -17,3 +18,6 @@ This guide is primarily based on [WebGL2 Fundamentals](https://webgl2fundamental
 ## Reference
 WebGL2Fundamentals
 https://webgl2fundamentals.org/
+
+WebGLSamples - WebGL2Samples
+https://github.com/WebGLSamples/WebGL2Samples

@@ -12,18 +12,18 @@ If you do not wish to setup your local environment for running your program, an 
 ## Local Environment
 If you plan to set up a local environment, a web server is needed for us to host our webpage. There are many ways to host a webpage locally. 
 
-In out guide, [Node.js](https://nodejs.org/) is used because it is a widely adoped runtime environment for web application and it supports on Windows, macOS and most of the linux system.
+In our guide, [Node.js](https://nodejs.org/) is used because it is a widely adopted runtime environment for web application. It supports on Windows, macOS and most of the linux operating system.
 
-A simple solution to set up a webserver with Node.js suggested by WebGL2Fundamentals is to use [Servez](https://greggman.github.io/servez/).  
+A simple solution to set up a web server with Node.js suggested by WebGL2Fundamentals is to use [Servez](https://greggman.github.io/servez/).  
 
-In our guide, we will build the web server using [Express.js](https://expressjs.com/) instead of using Servez.
+*In our guide, we build the web server using [Express.js](https://expressjs.com/) instead of using Servez.
 
 ### Installation of Node.js
 Check Node.js is installed.
 ```
 node -v
 ```
-If an error is shown, mentioning 'node' is not recognized, you need to install Node.js first. Installation guide is not pro
+If an error is shown, mentioning 'node' is not recognized, you need to install Node.js first. Installation guide is not provided. You may check the following guide from Node.js official website.
 [Node.js - How to install Node.js](https://nodejs.org/en/learn/getting-started/how-to-install-nodejs)
 
 ### Setting up Express.js
@@ -31,7 +31,7 @@ If an error is shown, mentioning 'node' is not recognized, you need to install N
     ```
     npm init
     ```
-    _keep presssing `Enter` if default configurisation is used._
+    _keep presssing `Enter` to use default configurisation._
 
 2.  Install Express
 
@@ -45,7 +45,7 @@ If an error is shown, mentioning 'node' is not recognized, you need to install N
     mkdir public
     ```
 
-2.  Create index HTML file
+2.  Create an index HTML file
     > NOTE: you can create the file in other way, like `new file` in VS Code
     ```
     nano public/index.html
@@ -71,7 +71,7 @@ If an error is shown, mentioning 'node' is not recognized, you need to install N
     Press `ctrl+O` to save
     Press `ctrl+X` to exit  
 
-3.  Create styles CSS file
+3.  Create a styles CSS file
     > NOTE: you can create the file in other way, like `new file` in VS Code
     ```
     nano public/styles.css
@@ -86,7 +86,7 @@ If an error is shown, mentioning 'node' is not recognized, you need to install N
     Press `ctrl+X` to exit
 
 
-4.  Create main JS file
+4.  Create a main JS file
     > NOTE: you can create the file in other way, like `new file` in VS Code
     ```
     nano public/main.js
@@ -169,7 +169,7 @@ If an error is shown, mentioning 'node' is not recognized, you need to install N
     Press `ctrl+O` to save
     Press `ctrl+X` to exit  
 
-5.  Create server JS file
+5.  Create a server JS file
     > NOTE: you can create the file in other way, like `new file` in VS Code
     ```
     nano server.js
@@ -188,7 +188,7 @@ If an error is shown, mentioning 'node' is not recognized, you need to install N
     Press `ctrl+O` to save
     Press `ctrl+X` to exit  
 
-### Start and End the Server
+### Start and Close the Server
 - Start the Server
     ```
     node server.js
@@ -196,5 +196,5 @@ If an error is shown, mentioning 'node' is not recognized, you need to install N
     View the website on [http://localhost:3000/](http://localhost:3000/)
     A "Hello World!" text and a green triangle inside a rectangle should have appeared.
 
-- Terminate the Server  
+- Close the Server  
     Press `ctrl+c` to exit process.
