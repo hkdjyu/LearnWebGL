@@ -2,14 +2,18 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <!-- a viewport meta tag to control layout on mobile browsers -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hello World</title>
+    <title>WebGL2Guide - 01 Setup and Installation</title>
     <link rel="stylesheet" href="styles.css">
+    <!-- a script to check for several webgl errors -->
     <script src="https://greggman.github.io/webgl-lint/webgl-lint.js"></script>
 </head>
 <body>
-    <h1>Hello World!</h1>
-    <canvas id="glcanvas"></canvas>
+    <div id="canvas-container">
+        <canvas id="glcanvas"></canvas>
+    </div>
+    
     <script src="main.js"></script>
 </body>
 </html>

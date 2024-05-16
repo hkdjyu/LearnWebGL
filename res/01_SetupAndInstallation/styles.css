@@ -1,3 +1,16 @@
-canvas {
-    border: 1px solid #000;
+html, head, body {
+    margin: 0;
+    padding: 25px;
+    background-color: gray;
+}
+
+#canvas-container {
+    width: 100%;
+    text-align:center;
+}
+
+#glcanvas {
+    width: 512px;
+    height: 512px;
+    background-color: fuchsia;
 }

@@ -32,169 +32,46 @@ If an error is shown, mentioning 'node' is not recognized, you need to install N
     npm init
     ```
     _keep presssing `Enter` to use default configurisation._
-
+    <br/>
 2.  Install Express
-
     ```
     npm install express
     ```
+    <br/>
+### Creating the content
+> REF: https://github.com/sessamekesh/webgl-tutorials-2023/tree/main/src/01-hello-triangle
 
-### Creating the files
 1.  Create a public folder
     ```
     mkdir public
     ```
-
-2.  Create an index HTML file
+    <br/>
+2.  Create HTML, CSS, JS file
     > NOTE: you can create the file in other way, like `new file` in VS Code
     ```
-    nano public/index.html
+    touch public/index.html
+    touch public/styles.css
+    touch public/main.js
     ```
-    Put the following:
-    ```
-    <!DOCTYPE html>
-    <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Hello World</title>
-        <link rel="stylesheet" href="styles.css">
-        <script src="https://greggman.github.io/webgl-lint/webgl-lint.js"></script>
-    </head>
-    <body>
-        <h1>Hello World!</h1>
-        <canvas id="glcanvas"></canvas>
-        <script src="main.js"></script>
-    </body>
-    </html>
-    ```
-    Press `ctrl+O` to save
-    Press `ctrl+X` to exit  
-
-3.  Create a styles CSS file
+    Please check the example code [here](/res/01_SetupAndInstallation/).
+    For main.js, there plenty of codes and you may get suprised xD.
+    No worry, we will discuss it in the next part
+    <br/>
+3.  Create a server JS file
     > NOTE: you can create the file in other way, like `new file` in VS Code
     ```
-    nano public/styles.css
+    touch server.js
     ```
-    Put the following:  
-    ```
-    canvas {
-        border: 1px solid #000;
-    }
-    ```
-    Press `ctrl+O` to save
-    Press `ctrl+X` to exit
-
-
-4.  Create a main JS file
-    > NOTE: you can create the file in other way, like `new file` in VS Code
-    ```
-    nano public/main.js
-    ```
-    Put the following:  
-    ```
-    const canvas = document.querySelector('canvas');
-    const gl = canvas.getContext('webgl2');
-
-    const vsGLSL = `#version 300 es
-    in vec4 position;
-    void main() {
-        gl_Position = position;
-    }
-    `;
-
-    const fsGLSL = `#version 300 es
-    precision highp float;
-
-    out vec4 outColor;
-
-    void main() {
-        outColor = vec4(0, 1, 0.5, 1);
-    }
-    `;
-
-    const vertexShader = gl.createShader(gl.VERTEX_SHADER);
-    gl.shaderSource(vertexShader, vsGLSL);
-    gl.compileShader(vertexShader);
-    if (!gl.getShaderParameter(vertexShader, gl.COMPILE_STATUS)) {
-    throw new Error(gl.getShaderInfoLog(vertexShader))
-    };
-
-    const fragmentShader = gl.createShader(gl.FRAGMENT_SHADER);
-    gl.shaderSource(fragmentShader, fsGLSL);
-    gl.compileShader(fragmentShader);
-    if (!gl.getShaderParameter(fragmentShader, gl.COMPILE_STATUS)) {
-    throw new Error(gl.getShaderInfoLog(fragmentShader))
-    };
-
-    const prg = gl.createProgram();
-    gl.attachShader(prg, vertexShader);
-    gl.attachShader(prg, fragmentShader);
-    gl.linkProgram(prg);
-    if (!gl.getProgramParameter(prg, gl.LINK_STATUS)) {
-    throw new Error(gl.getProgramInfoLog(prg))
-    };
-
-    const positionLoc = gl.getAttribLocation(prg, 'position');
-
-    const triangleVAO = gl.createVertexArray();
-    gl.bindVertexArray(triangleVAO);
-
-    // in clip space
-    const vertexPositions = new Float32Array([
-        0,   0.7,
-    0.5,  -0.7,
-    -0.5,  -0.7,
-    ]);
-
-    const positionBuffer = gl.createBuffer();
-    gl.bindBuffer(gl.ARRAY_BUFFER, positionBuffer);
-    gl.bufferData(gl.ARRAY_BUFFER, vertexPositions, gl.STATIC_DRAW);
-
-    gl.enableVertexAttribArray(positionLoc);
-    gl.vertexAttribPointer(
-        positionLoc,  
-        2,            // 2 values per vertex shader iteration
-        gl.FLOAT,     // data is 32bit floats
-        false,        // don't normalize
-        0,            // stride (0 = auto)
-        0,            // offset into buffer
-    );
-
-    gl.useProgram(prg);
-
-    // compute 3 vertices for 1 triangle
-    gl.drawArrays(gl.TRIANGLES, 0, 3);
-    ```
-    Press `ctrl+O` to save
-    Press `ctrl+X` to exit  
-
-5.  Create a server JS file
-    > NOTE: you can create the file in other way, like `new file` in VS Code
-    ```
-    nano server.js
-    ```
-    Put the following:
-    ```
-    const express = require('express');
-    const path = require('path');
-    const app = express();
-    const port = 3000;
-    app.use(express.static(path.join(__dirname, 'public')));
-    app.listen(port, () => {
-        console.log(`Server is running on port ${port}`);
-    });
-    ```
-    Press `ctrl+O` to save
-    Press `ctrl+X` to exit  
-
+    Please check the example code [here](/res/01_SetupAndInstallation/)
+    <br/>
 ### Start and Close the Server
 - Start the Server
     ```
     node server.js
     ```
     View the website on [http://localhost:3000/](http://localhost:3000/)
-    A "Hello World!" text and a green triangle inside a rectangle should have appeared.
-
+    Two triangles on a navy blue canvas should appear.
+    <img src="./images/01_web-result.png" alt="web-result" width="512"/>
+    <br/>
 - Close the Server  
     Press `ctrl+c` to exit process.
